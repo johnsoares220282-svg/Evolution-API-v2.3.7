@@ -6,5 +6,5 @@ ENV PORT=8080
 
 EXPOSE 8080
 
-# Forçando o provider diretamente no comando de execução
-CMD ["sh", "-c", "export DATABASE_PROVIDER=postgresql && node dist/main.js"]
+# Comando que força as variáveis de ambiente na inicialização
+CMD ["sh", "-c", "export DATABASE_TYPE=postgres && export DATABASE_PROVIDER=postgresql && node dist/main.js"]
