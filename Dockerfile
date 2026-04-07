@@ -6,5 +6,5 @@ ENV PORT=8080
 
 EXPOSE 8080
 
-# Comando corrigido para a imagem oficial
-CMD ["node", "dist/main.js"]
+# Forçando o provider diretamente no comando de execução
+CMD ["sh", "-c", "export DATABASE_PROVIDER=postgresql && node dist/main.js"]
