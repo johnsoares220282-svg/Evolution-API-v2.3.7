@@ -1,4 +1,4 @@
-FROM node:24-alpine AS builder
+FROM atendai/evolution-api:latest
 
 RUN apk update && \
     apk add --no-cache git ffmpeg wget curl bash openssl
@@ -37,7 +37,9 @@ RUN apk update && \
 
 ENV TZ=America/Sao_Paulo
 ENV DOCKER_ENV=true
-
+ENV DATABASE_TYPE=postgres
+ENV DATABASE_ENABLED=true
+ENV PORT=8080
 WORKDIR /evolution
 
 COPY --from=builder /evolution/package.json ./package.json
