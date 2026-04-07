@@ -5,3 +5,5 @@ ENV DATABASE_ENABLED=true
 ENV PORT=8080
 
 EXPOSE 8080
+
+ENTRYPOINT ["node", "dist/src/main.js"]
