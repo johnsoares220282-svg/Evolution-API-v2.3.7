@@ -6,4 +6,5 @@ ENV PORT=8080
 
 EXPOSE 8080
 
-ENTRYPOINT ["node", "dist/src/main.js"]
+# Comando corrigido para a imagem oficial
+CMD ["node", "dist/main.js"]
